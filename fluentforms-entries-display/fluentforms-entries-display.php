@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Fluent Forms Profile Entries
  * Description: Affiche les soumissions de formulaire Fluent Forms de l'utilisateur actuellement connecté sur sa page de profil.
- * Version: 1.14
+ * Version: 1.15
  * Author: Thomas Germain, Hungry Nuggets
  * Author URI: https://thomasgermain.be
  */
@@ -41,7 +41,7 @@ function fluentforms_display_entry($entry) {
     $dateFormatted = date('d/m/Y', strtotime($entry->created_at));
 
     // Si 'image-upload' est un tableau et a au moins une valeur, affichez le premier lien comme une image
-    $placeholderImage = plugins_url('fluentforms-entries-display/carPlaceholder.png');
+    $placeholderImage = plugins_url('fluentforms-entries-display/images/carPlaceholder.png');
     $imageLink = (isset($responses['image-upload']) && is_array($responses['image-upload']) && !empty($responses['image-upload'][0])) ? $responses['image-upload'][0] : $placeholderImage;
 
     // Si le status est approved on affiche la couleur verte
