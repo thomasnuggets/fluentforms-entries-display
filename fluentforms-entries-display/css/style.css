@@ -1,0 +1,20 @@
+.lemmonyFadeIn {
+    --lemmony-animation-name: lemmonyFadeIn;
+    animation-delay: var(--lemmony-delay-xsmall);
+}
+
+.carImage {
+    border-radius: 24px;
+}
+
+.entryContent p {
+    margin-top: 0;
+    color: #9b9b9b;
+}
+
+.wp-element-button {
+    padding-top: var(--wp--preset--spacing--20);
+    padding-right: var(--wp--preset--spacing--40);
+    padding-bottom: var(--wp--preset--spacing--20);
+    padding-left: var(--wp--preset--spacing--40);
+}
