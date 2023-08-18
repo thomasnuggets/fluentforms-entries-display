@@ -6,7 +6,7 @@
  * where the user can select from which form entries should be displayed.
  * 
  * @package FluentFormsEntriesDisplay
- * @author Votre nom ici
+ * @author Thomas Germain, Hungry Nuggets
  */
 
 add_action('admin_menu', 'fluentforms_entries_display_admin_page');

@@ -1,0 +1,76 @@
+/* FONTS */
+body {
+    font-family: 'RisenationText', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+font-family: 'RisenationHeading', serif !important;
+}
+
+main {
+    //min-height: 50vh;
+}
+
+/* plugin table entries */
+.wp-image-555 {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+.margin-top-000 {
+margin-top: 0 !important;
+}
+.status-red {
+border-color: #c44601 !important;
+background-color: #c44601 !important;
+color: #ffffff !important;
+pointer-event: none !important;
+cursor: default;
+}
+.status-green {
+border-color: #00bf7d !important;
+background-color: #00bf7d !important;
+pointer-event: none !important;
+color: #ffffff !important;
+cursor: default;
+}
+
+/* login form */
+form#loginform {
+    overflow: initial !important;
+}
+
+.fls_reset_pass_form input, .fls_registration_form input, .fls_login_wrapper #fls_2fa_form .input, .fls_login_wrapper form#loginform .input {
+    width: -webkit-fill-available !important;
+border: 1px solid #1e2122 !important;
+    color: #1e2122 !important;
+border-radius: 4px !important;
+font-size: 16px;
+font-weight: 400!important;
+}
+
+.fls_auth_wrapper {
+    font-size: 16px;
+}
+
+.fls_login_wrapper input#wp-submit, #fls_submit, #fls_reset_pass {
+font-family: 'RisenationText', sans-serif !important;
+font-size: 16px;
+}
+
+.fls_login_wrapper input::placeholder, input#fls_email::placeholder, .fls_registration_wrapper .fls_registration_form input::placeholder {
+font-family: 'RisenationText', sans-serif !important;
+font-size: 16px;
+}
+
+.fls_login_wrapper #fls_2fa_form label, .fls_login_wrapper form#loginform label {
+font-weight: 400
+}
+
+a#fls_show_signup {
+        border-bottom: 1px solid #1e2122;
+}
+
+.fls_reset_pass_wrapper, .fls_login_wrapper #fls_2fa_form, .fls_login_wrapper form#loginform, .fls_registration_wrapper {
+    width: 420px !important;
+    max-width: 100%;
+}

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Fluent Forms Profile Entries
  * Description: Affiche les soumissions de formulaire Fluent Forms de l'utilisateur actuellement connecté sur sa page de profil.
- * Version: 1.15
+ * Version: 1.16
  * Author: Thomas Germain, Hungry Nuggets
  * Author URI: https://thomasgermain.be
  */
@@ -41,8 +41,16 @@ function fluentforms_display_entry($entry) {
     $dateFormatted = date('d/m/Y', strtotime($entry->created_at));
 
     // Si 'image-upload' est un tableau et a au moins une valeur, affichez le premier lien comme une image
-    $placeholderImage = plugins_url('fluentforms-entries-display/images/carPlaceholder.png');
-    $imageLink = (isset($responses['image-upload']) && is_array($responses['image-upload']) && !empty($responses['image-upload'][0])) ? $responses['image-upload'][0] : $placeholderImage;
+    $placeholderImage = plugins_url('fluentforms-entries-display/carPlaceholder.png');
+    
+    if (isset($responses['image-upload']) && is_array($responses['image-upload']) && !empty($responses['image-upload'][0])) {
+        $attachment_url = $responses['image-upload'][0];
+        $attachment_id = attachment_url_to_postid($attachment_url);
+        $image_array = wp_get_attachment_image_src($attachment_id, 'thumbnail');
+        $imageLink = $image_array[0];
+    } else {
+        $imageLink = $placeholderImage;
+    }
 
     // Si le status est approved on affiche la couleur verte
     $buttonClass = ($responses['dropdown'] == 'Approved') ? 'status-green' : (($responses['dropdown'] == 'Not approved') ? 'status-red' : '');
@@ -58,7 +66,7 @@ function fluentforms_display_entry($entry) {
             <div class="wp-block-columns are-vertically-aligned-center is-layout-flex wp-container-43">
                 <div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-container-40">
                     <h2 class="wp-block-heading has-large-font-size">' . esc_html($responses['input_text'] ?? '') . '</h2>
-                    <p class="has-small-font-size entryContent">' . esc_html($responses['plate_number'] ?? '') . ' ajouté le ' . $dateFormatted . '</p>
+                    <p class="has-small-font-size entryContent" style="margin-top: 0 !important">' . esc_html($responses['plate_number'] ?? '') . ' ajouté le ' . $dateFormatted . '</p>
                 </div>
                 <div class="wp-block-column is-vertically-aligned-center lemmony-mobile-left is-layout-flow" style="flex-basis: max-content;">
                     <div class="wp-block-buttons is-content-justification-right is-layout-flex wp-container-41">

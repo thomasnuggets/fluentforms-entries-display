@@ -1,3 +1,9 @@
+/* 
+*
+*   Additonnal CSS 
+*
+*/
+
 .lemmonyFadeIn {
     --lemmony-animation-name: lemmonyFadeIn;
     animation-delay: var(--lemmony-delay-xsmall);
@@ -17,4 +23,32 @@
     padding-right: var(--wp--preset--spacing--40);
     padding-bottom: var(--wp--preset--spacing--20);
     padding-left: var(--wp--preset--spacing--40);
+}
+
+
+
+/* */
+
+/* plugin table entries */
+.wp-image-555 {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+.margin-top-000 {
+margin-top: 0 !important;
+}
+
+.status-red {
+border-color: #c44601 !important;
+background-color: #c44601 !important;
+color: #ffffff !important;
+pointer-event: none !important;
+cursor: default;
+}
+.status-green {
+border-color: #00bf7d !important;
+background-color: #00bf7d !important;
+pointer-event: none !important;
+color: #ffffff !important;
+cursor: default;
 }
